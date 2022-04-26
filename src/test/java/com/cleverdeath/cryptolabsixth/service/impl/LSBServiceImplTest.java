@@ -12,10 +12,11 @@ import java.io.File;
 class LSBServiceImplTest {
 
     LSBService lsbService;
-    String message = "hello";
+    String message;
 
     @BeforeAll
     void setUp() {
+        message = "hello";
         lsbService = new LSBServiceImpl();
     }
 

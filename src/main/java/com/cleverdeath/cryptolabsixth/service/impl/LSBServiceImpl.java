@@ -20,9 +20,6 @@ public class LSBServiceImpl implements LSBService {
     public boolean processLSBForWawFile(File file, String outputFilePath, String information) {
         AudioReader audioReader = new AudioReaderImpl();
         byte[] bytesFromAudio = audioReader.readBytesFromWawFile(file).get();
-        if (bytesFromAudio.length < information.length() * 16 / 3 + 1) {
-            return false;
-        }
         int currentByteOfAudio = 44;
         int remainingBits = 3;
         for (int i = 0; i < information.length(); i++) {
